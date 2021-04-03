@@ -14,16 +14,19 @@ public class UserTaxVariableModel {
     private TaxableIncomeModel taxableIncomeModel;
     private double taxRebate;
     private MedicalAidTaxCreditModel medicalAid;
+    private double totalEarnings;
 
     public UserTaxVariableModel() {
     }
 
     public UserTaxVariableModel(TaxableIncomeModel taxableIncomeModel
-            , double taxRebate,MedicalAidTaxCreditModel medicalAid) {
+            , double taxRebate,MedicalAidTaxCreditModel medicalAid
+            ,double totalEarnings) {
         
         this.taxableIncomeModel = taxableIncomeModel;
         this.taxRebate = taxRebate;
         this.medicalAid = medicalAid;
+        this.totalEarnings = totalEarnings;
     }
 
     public TaxableIncomeModel getTaxableIncomeModel() {
@@ -49,8 +52,14 @@ public class UserTaxVariableModel {
     public void setMedicalAidModel(MedicalAidTaxCreditModel medicalAid) {
         this.medicalAid = medicalAid;
     }
-    
-    
+
+    public double getTotalEarnings() {
+        return totalEarnings;
+    }
+
+    public void setTotalEarnings(double totalEarnings) {
+        this.totalEarnings = totalEarnings;
+    }
     
     
     

@@ -31,6 +31,7 @@ public class UserProfileBuilder {
         
         this.userData = userData;
         this.taxData=taxData;
+        
         this.getUserTaxProfile();
     }
     
@@ -73,9 +74,9 @@ public class UserProfileBuilder {
             result = rebate.getPrimary();
         }
         else if(age < 75){
-            result = rebate.getSecondary();
+            result = rebate.getPrimary() + rebate.getSecondary();
         }else{
-            result = rebate.getTertiary();
+            result = rebate.getPrimary() + rebate.getSecondary() + rebate.getTertiary();
         }
         
         return result;
@@ -122,7 +123,7 @@ public class UserProfileBuilder {
                 taxData.getMedicalAidCredit2021();
 
         this.userProfile = new UserTaxVariableModel(incomeLevel,taxRebate
-                ,medicalAidCredit);
+                ,medicalAidCredit,userData.getTotalEarnings());
     }
     
     private void build2020Profile(){
@@ -141,13 +142,11 @@ public class UserProfileBuilder {
                 double taxRebate = this.taxRebateSearch(
                         taxData.getTaxRebates2020(),userData.getAge());
                 
-                
-                //MedicalAid now
                 MedicalAidTaxCreditModel medicalAidCredit =
                         taxData.getMedicalAidCredit2020();
                 
                 userProfile = new UserTaxVariableModel(incomeLevel,taxRebate
-                        ,medicalAidCredit);
+                        ,medicalAidCredit,userData.getTotalEarnings());
     }
     
     public UserTaxVariableModel getUserProfile(){
