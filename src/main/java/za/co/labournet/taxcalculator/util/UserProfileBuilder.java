@@ -132,7 +132,7 @@ public class UserProfileBuilder {
                         , this.userData.getTotalEarnings()
                         ,this.userData.getAge())){
                     
-                    //return null;
+                    return;
                 }
                 
                 TaxableIncomeModel incomeLevel =

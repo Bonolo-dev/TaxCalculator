@@ -5,6 +5,7 @@
  */
 package za.co.labournet.taxcalculator.dto;
 
+import javax.validation.constraints.NotBlank;
 import za.co.labournet.taxcalculator.util.EarningsPeriodType;
 
 /**
@@ -12,10 +13,13 @@ import za.co.labournet.taxcalculator.util.EarningsPeriodType;
  * @author omphilebonolomonale
  */
 public class CalculatorInputDto {
-    
+    @NotBlank
     private int taxYear;
+    @NotBlank
     private int age;
+    @NotBlank
     private double totalEarnings;
+    @NotBlank
     private EarningsPeriodType earningsType;
     private int medicalAidDependants;
 

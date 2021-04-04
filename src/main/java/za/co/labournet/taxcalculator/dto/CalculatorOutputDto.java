@@ -9,7 +9,7 @@ package za.co.labournet.taxcalculator.dto;
  *
  * @author omphilebonolomonale
  */
-public class CalculatorOutputDto {
+    public class CalculatorOutputDto {
     
     private double payeRaw;
     private double taxCredit;
